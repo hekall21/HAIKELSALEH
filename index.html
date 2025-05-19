@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Muhammad Haikel Saleh | Portfolio</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f1419;
+    color: #e4e6eb;
+    line-height: 1.6;
+  }
+  a {
+    color: #4c9aff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  header {
+    background: #161b22;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  }
+  .nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #4c9aff;
+    letter-spacing: 1.2px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav li {
+    cursor: pointer;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+  }
+  nav a:hover, nav a.active {
+    color: #4c9aff;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 5rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+
+  /* Hero */
+  #hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 4rem 1rem 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  #hero img {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #4c9aff;
+    box-shadow: 0 4px 12px rgba(76,154,255,0.5);
+    object-fit: cover;
+  }
+  #hero .hero-text {
+    max-width: 600px;
+  }
+  #hero h1 {
+    font-size: 2.8rem;
+    color: #4c9aff;
+    margin-bottom: 0.2rem;
+  }
+  #hero h2 {
+    font-weight: 400;
+    color: #a0aec0;
+    font-size: 1.4rem;
+  }
+  #hero .contact {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+  #hero .contact span {
+    display: inline-block;
+    margin: 0 0.8rem;
+  }
+  #hero .contact a {
+    color: #a0aec0;
+    transition: color 0.3s ease;
+  }
+  #hero .contact a:hover {
+    color: #4c9aff;
+  }
+
+  /* About */
+  #about {
+    background: #161b22;
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  #about h3 {
+    color: #4c9aff;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #4c9aff;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+  }
+  #about p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+  }
+
+  /* Education & Extracurricular */
+  #education, #extracurricular, #projects, #skills {
+    background: #161b22;
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  #education h3, #extracurricular h3, #projects h3, #skills h3, #contact h3 {
+    color: #4c9aff;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #4c9aff;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+  }
+  #education article, #projects article {
+    margin-bottom: 1.2rem;
+  }
+  #education strong, #projects strong {
+    font-size: 1.1rem;
+    color: white;
+  }
+  #education em, #projects em {
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  #education p, #projects p {
+    color: #cbd5e1;
+    margin-top: 0.3rem;
+  }
+  #extracurricular ul {
+    list-style: disc inside;
+    color: #cbd5e1;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  /* Skills */
+  #skills .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  #skills .skill {
+    background-color: #4c9aff;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 6px rgb(76 154 255 / 0.4);
+    user-select: none;
+  }
+
+  /* Contact */
+  #contact p, #contact a {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+  }
+  #contact a {
+    word-break: break-all;
+  }
+  #contact p > strong {
+    color: #4c9aff;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    main {
+      margin: 6rem 1rem 2rem;
+    }
+    nav ul {
+      gap: 1rem;
+    }
+    #hero {
+      justify-content: center;
+      text-align: center;
+    }
+    #hero .hero-text {
+      max-width: 100%;
+    }
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div class="logo">Haikel Saleh</div>
+    <nav>
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">Tentang Saya</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#extracurricular">Ekstrakurikuler</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="hero" tabindex="0">
+    <img src="1ef2fa74-583d-44c8-b31a-a6c01fd90f5c.jpg" alt="Foto Muhammad Haikel Saleh" />
+    <div class="hero-text">
+      <h1>Muhammad Haikel Saleh</h1>
+      <h2>Siswa Teknologi Komputer dan Jaringan</h2>
+      <div class="contact" aria-label="Informasi Kontak">
+        <span>📞 <a href="tel:+62895320959499">0895320959499</a></span> |
+        <span>✉️ <a href="mailto:haikelsaleh21@gmail.com">haikelsaleh21@gmail.com</a></span> |
+        <span>🏠 Jl. TK Ria, Gg Sudil Hasim, RT 08 RW 002, Kel. Kampung Tengah, Kec. Kramat Jati, Jakarta Timur</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" tabindex="0" aria-label="Tentang Saya">
+    <h3>Tentang Saya</h3>
+    <p>
+      Siswa SMK jurusan Teknologi Komputer dan Jaringan yang aktif, disiplin, dan memiliki semangat tinggi dalam belajar serta berkembang di bidang teknologi. Memiliki minat dalam bidang jaringan komputer, perakitan PC, troubleshooting, serta administrasi digital. Terbiasa bekerja dalam tim, serta memiliki kemampuan komunikasi dan manajemen waktu yang baik. Saya siap berkontribusi dalam lingkungan kerja yang profesional untuk mendukung kegiatan operasional dan teknis.
+    </p>
+  </section>
+
+  <section id="education" tabindex="0" aria-label="Pendidikan">
+    <h3>Pendidikan</h3>
+    <article>
+      <strong>SMK Negeri 22 Jakarta – Condet, Jakarta Timur</strong><br>
+      <em>Teknologi Komputer dan Jaringan</em><br>
+      <em>Jul 2023 – May 2025</em>
+    </article>
+    <article>
+      <strong>SMPN 209 Jakarta</strong><br>
+      <em>Lulus tahun 2023</em>
+    </article>
+    <article>
+      <strong>SDN 03 Pagi Jakarta</strong><br>
+      <em>Lulus tahun 2017</em>
+    </article>
+  </section>
+
+  <section id="extracurricular" tabindex="0" aria-label="Ekstrakurikuler">
+    <h3>Ekstrakurikuler</h3>
+    <ul>
+      <li>IT Club (Anggota aktif)</li>
+      <li>Basket Club (Aktif)</li>
+    </ul>
+  </section>
+
+  <section id="projects" tabindex="0" aria-label="Pengalaman Proyek">
+    <h3>Pengalaman Proyek</h3>
+    <article>
+      <strong>ANGGOTA AKTIF IT CLUB</strong>
+      <ul>
+        <li>Terlibat dalam analisis kebutuhan pengguna dan perancangan jaringan dasar.</li>
+        <li>Bekerja dalam tim untuk menyelesaikan studi kasus jaringan menggunakan perangkat dan software simulasi seperti Cisco Packet Tracer.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="skills" tabindex="0" aria-label="Keterampilan">
+    <h3>Skills & Experience</h3>
+    <strong>Soft Skills:</strong>
+    <ul>
+      <li>Komunikasi efektif</li>
+      <li>Manajemen waktu</li>
+      <li>Mudah beradaptasi</li>
+      <li>Fokus terhadap detail</li>
+    </ul>
+    <strong>Hard Skills:</strong>
+    <div class="skill-list" aria-label="Hard Skills">
+      <span class="skill">Microsoft Office</span>
+      <span class="skill">Jaringan dasar (LAN, konfigurasi IP, kabel UTP)</span>
+      <span class="skill">Perakitan komputer dan troubleshooting</span>
+      <span class="skill">Cisco Packet Tracer</span>
+      <span class="skill">Editing video (Alight Motion)</span>
+    </div>
+  </section>
+
+  <section id="contact" tabindex="0" aria-label="Kontak">
+    <h3>Kontak</h3>
+    <p><strong>Telepon:</strong> <a href="tel:+62895320959499">0895320959499</a></p>
+    <p><strong>Email:</strong> <a href="mailto:haikelsaleh21@gmail.com">haikelsaleh21@gmail.com</a></p>
+    <p><strong>Alamat:</strong> Jl. TK Ria, Gg Sudil Hasim, RT 08 RW 002, Kel. Kampung Tengah, Kec. Kramat Jati, Jakarta Timur</p>
+  </section>
+</main>
+
+<footer>
+  &copy;  Muhammad Haikel Saleh - Portfolio
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
+      link.classList.add('active');
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        // For accessibility, focus after scroll
+        setTimeout(() => target.focus(), 800);
+      }
+    });
+  });
+
+  // Update active nav on scroll
+  window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 100;
+    document.querySelectorAll('main section').forEach(section => {
+      let id = section.getAttribute('id');
+      let navLink = document.querySelector(`nav a[href="#${id}"]`);
+      if (
+        section.offsetTop <= fromTop &&
+        section.offsetTop + section.offsetHeight > fromTop
+      ) {
+        navLink.classList.add('active');
+      } else {
+        navLink.classList.remove('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
